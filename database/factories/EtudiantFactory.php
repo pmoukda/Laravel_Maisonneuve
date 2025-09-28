@@ -22,8 +22,8 @@ class EtudiantFactory extends Factory
         'adresse' => $this->faker->address(),
         'telephone' => $this->faker->phoneNumber(),
         'email' =>$this->faker->unique()->safeEmail(),
-        'date_de_naissance' => $this->faker->dateTimeBetween('-65','-16')->format('Y-m-d'),
-        'ville_id'=> Ville::factory()
+        'date_de_naissance' => $this->faker->dateTimeBetween('-65 years','-16 years')->format('Y-m-d'),
+        'ville_id'=> Ville::inRandomOrder()->first()->id
         ];
     }
 }
