@@ -1,0 +1,26 @@
+/* nav menu */
+.navbar .navbar-brand{
+    font-size: 48px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #212529;
+}
+
+/* barre de recherche dans le menu de navigation */
+form .form-control-sm{
+    border-radius:3px 0 0 3px; outline: none; border: none;
+}
+ .container-sm .btn {
+    border-radius: 0 3px 3px 0;
+}
+
+
+
+
+  

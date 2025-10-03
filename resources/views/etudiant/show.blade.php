@@ -4,7 +4,7 @@
 
 <h1 class="text-center mt-5">L'étudiant <small>#{{ $etudiant->id }}</small> </h1>
 <div class="container">
-    <div class="row justify-content-center"></div>
+    <div class="row justify-content-center">
         <div class="col-lg-6 mx-auto">
             <div class="card border-light shadow-lg mt-5">
                 <div class="card-header bg-dark text-light">
