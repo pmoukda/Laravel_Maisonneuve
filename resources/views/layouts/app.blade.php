@@ -11,7 +11,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
     <header>
-        <nav class="navbar navbar-expand-lg bg-primary p-2  ">
+        <nav class="navbar navbar-expand-lg p-2  ">
           <div class="container-fluid">
               <a class="navbar-brand fw-bolder text-warning border border-2 p-1 shadow-lg" href="/">M<small class="fs-6">Collège</small></a>    
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,7 +27,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light " href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">Étudiants</a>
-                        <ul class="dropdown-menu bg-primary border-0">
+                        <ul class="dropdown-menu border-0">
                             <li><a class="dropdown-item text-light" href="{{ route('etudiant.index') }}">Liste des étudiants</a></li>
                             <li><a class="dropdown-item text-light" href="{{ route('etudiant.create') }}">Nouvel Étudiant</a></li>
                         </ul>
@@ -46,10 +46,10 @@
                     </ul> 
                     <div class="d-flex align-items-center flex-lg-row">
                         <form class="container-sm d-flex justify-content-center p-2" role="search">
-                           <input class="form-control-sm" type="search"
+                           <input class="form-control-sm" type="search" id="search" name="search"
                             placeholder="Recherche..."
                             aria-label="Search">
-                           <button class="btn btn-dark btn-sm" type="submit">
+                           <button class="btn btn-warning btn-sm btn-search" type="submit" aria-label="Search">
                              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                            </button>
                         </form>
@@ -58,7 +58,7 @@
             </div>
         </nav>
     </header>
-    <main class="container flex-grow-1">
+    <main class="flex-grow-1">
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show mt-4 text-center fs-5" role="alert">
                 {{ session('success')}}
@@ -67,8 +67,8 @@
         @endif
         @yield('content')
     </main>
-    <footer class="bg-dark text-light text-center p-2 mt-5">
-        <p>
+    <footer class="text-light text-center p-2 mt-5">
+        <p class="mb-0 fs-14">
             &copy; Laravel-TP1.Tous droits réservés.
         </p>
     </footer>

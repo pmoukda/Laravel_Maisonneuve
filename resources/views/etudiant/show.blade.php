@@ -22,7 +22,7 @@
                     <a href="{{ route('etudiant.edit',$etudiant->id) }}" class="btn btn-warning fs-5">Edit</a>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger fs-5" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                       Supprimer
+                      Supprimer
                     </button>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"> Supprimer {{$etudiant->nom}}</h1>
         <button type="button" class="btn-close btn-danger " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body fs-5 text-danger">
+      <div class="modal-body">
         Voulez-vous vraiment supprimer l'étudiant: {{ $etudiant->nom }}?
       </div>
       <div class="modal-footer">
