@@ -36,7 +36,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="invalidCheck">
                     <label class="form-check-label fs-14 text-light" for="invalidCheck">Se souvenir de moi</label>
-                    <a class="fs-14 row justify-content-center text-warning mt-2" href="#">Déjà un compte? Se connecter</a>
+                    <a class="fs-14 row justify-content-center text-warning mt-2" href="{{ route('login') }}">Déjà un compte? Se connecter</a>
                 </div>
             </div>
             <input class="btn btn-primary w-100 mt-4 fs-5" type="submit" value="S'incrire">
