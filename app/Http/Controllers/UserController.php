@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 
+use function Laravel\Prompts\select;
+
 class UserController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::select()->orderby('name')->paginate(6);
+        return view('user.index', ['users' => $users]);
     }
 
     /**
@@ -36,14 +39,20 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'password' => ['required', 'string', 'confirmed',
                             Password::min(6)->letters()->mixedCase()->numbers()->symbols()->max(15)
-            ]
+            ]   
+        ],
+[],
+        [
+            'name' => trans('lang.name'),
+            'email' => trans('lang.email'),
+            'password' => trans('lang.password')
         ]);
         $user = new User;
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect(route('user.index'))->withSuccess("L'utilisateur a été créé avec succès!");
+        return redirect(route('user.index'))->with("success", trans("success_create_msg"));
 
     }
 
