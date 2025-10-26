@@ -7,27 +7,31 @@ img{
 .navbar, footer{
     background-color: #03102b;
 }
+
 .navbar .navbar-brand{
     font-size: 48px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 
 nav .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 nav .navbar-toggler:focus {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.215); 
+  box-shadow: 0 0 0 2px #ffffff37; 
 }
 
-
+.nav-link:hover{
+    background-color: #011c60 !important;
+    border-radius: 5px;
+}
 .dropdown-menu{
     background-color: #03102b !important;
 }
 
 .dropdown-menu .dropdown-item:hover{
     background-color:  #011c60;
+    
 }
 
 /* barre de recherche dans le menu de navigation */
@@ -71,7 +75,5 @@ form .form-control-sm{
 .fs-14{
     font-size: 14px;
 }
-
-
 
 
