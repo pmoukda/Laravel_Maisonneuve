@@ -1,28 +1,28 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', trans('Home'))
 @section('content')
 <section class="hero-container">
   <img class="img-fluid w-100" src="./img/students.jpg" alt="students">
   <div class=" container hero-text text-md-start">
-    <h1 class="">Mconnect</h1>
-    <h2 class="fst-italic">Le réseau social des élèves du collège</h2>
+    <h1 class="">@lang("lang.text_header_name")</h1>
+    <h2 class="fst-italic">@lang("lang.text_header_title")</h2>
     <div class="d-flex justify-content-start mt-4">
-      <a href="{{ route('etudiant.index') }}" class="btn bg-warning btn-md ">Voir les étudiants participants</a>
+      <a href="{{ route('etudiant.index') }}" class="btn bg-warning btn-md ">@lang("lang.text_header_button")</a>
     </div>
-  </div>
+  </div>@lang("lang.")
 </section>
 <section class="container mt-5">
-  <h2>Actualités récentes</h2>
+  <h2>@lang("lang.text_sectionActuality_title")</h2>
   <div class="row">
     <!-- Carte 1 -->
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <img src="./img/science.jpg" class="card-img-top" alt="Scientific project">
         <div class="card-body d-flex flex-column">
-          <h3 class="card-title fs-4">Projet étudiant en robotique</h3>
-          <p class="card-text">Des étudiants du programme Technologie du génie électrique ont conçu un robot autonome pour une compétition intercollégiale</p>
+          <h3 class="card-title fs-4">@lang("lang.text_card1_title")</h3>
+          <p class="card-text">@lang("lang.text_card1_paragraph")</p>
           <div class="mt-auto">
-            <a href="#" class="btn btn-primary btn-sm">Lire plus</a>
+            <a href="#" class="btn btn-primary btn-sm">@lang("lang.text_card_btn")</a>
           </div>
         </div>
       </div>
@@ -32,10 +32,10 @@
       <div class="card h-100">
         <img src="./img/programming.jpg" class="card-img-top" alt="IT internship">
         <div class="card-body d-flex flex-column">
-          <h3 class="card-title fs-4">Nouveau partenariat de stages</h3>
-          <p class="card-text">Le Cégep signe une entente avec Ubisoft pour offrir des stages en développement de jeux vidéo aux étudiants en informatique.</p>
+          <h3 class="card-title fs-4">@lang("lang.text_card2_title")s</h3>
+          <p class="card-text">@lang("lang.text_card2_paragraph")</p>
           <div class="mt-auto">
-            <a href="#" class="btn btn-primary btn-sm">Lire plus</a>
+            <a href="#" class="btn btn-primary btn-sm">@lang("lang.text_card_btn")</a>
           </div>
         </div>
       </div>
@@ -45,12 +45,12 @@
       <div class="card h-100">
         <img src="./img/open-doors-day.jpg" class="card-img-top" alt="Open doors day">
         <div class="card-body d-flex flex-column">
-          <h3 class="card-title fs-4">Journée portes ouvertes</h3>
+          <h3 class="card-title fs-4">@lang("lang.text_card3_title")</h3>
           <p class="card-text">
-            Venez découvrir notre collège le samedi 25 novembre à partir de 9h. Équipes pédagogiques, animations, et plus !
+            @lang("lang.text_card3_paragraph")
           </p>
           <div class="mt-auto">
-            <a href="#" class="btn btn-primary btn-sm">Lire plus</a>
+            <a href="#" class="btn btn-primary btn-sm">@lang("lang.text_card_btn")</a>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
   </div>
   <!-- Galerie -->
   <div class="mt-5">
-    <h2>Galerie</h2>
+    <h2>@lang("lang.text_sectionGallery_title")</h2>
     <div class="grid text-center">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
         <div class="col-md-4">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +12,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
+    @php $locale = session()->get('locale'); @endphp
     <header>
-        <ul class="nav justify-content-end bg-primary px-3">
+        <ul class="nav justify-content-end align-items-center bg-primary px-4">
+            @if($locale === 'en')
             <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="#">FR <img src="https://flagcdn.com/w40/fr.png" alt="Drapeau français" width="20" height="12" class="mb-1"></a>
+                <a class="nav-link text-white" aria-current="page" href="{{ route('lang', 'fr') }}">FR <img src="https://flagcdn.com/w40/fr.png" alt="Drapeau français" width="20" height="12" class="mb-1"></a>
             </li>
+            @else
             <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="#">EN <img src="https://flagcdn.com/w40/gb.png" alt="Drapeau anglais" width="20" height="12" class="mb-1"></a>
+                <a class="nav-link text-white" aria-current="page" href="{{ route('lang', 'en') }}">EN <img src="https://flagcdn.com/w40/gb.png" alt="Drapeau anglais" width="20" height="12" class="mb-1"></a>
             </li>
+            @endif
+             <div class="flex-lg-row">
+                <form class="container-sm d-flex justify-content-center p-2" role="search">
+                    <input class="form-control-sm" type="search" id="search" name="search" placeholder="@lang('lang.text_header_placeholder')" aria-label="Search">
+                    <button class="btn btn-warning btn-sm btn-search" type="button" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </button>
+                </form>
+            </div> 
         </ul>
-        <nav class="navbar navbar-expand-md p-2  ">
+        <nav class="navbar navbar-expand-md px-4 py-3">
             <div class="container-fluid">
-                <div class="m-2 mr-20 ">
+                <div class="m-1 mr-20 ">
                     <a class="navbar-brand fw-bolder text-warning border border-2 p-1 shadow-lg" href="/">M<small class="fs-6">Collège</small></a> 
                 </div>   
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,42 +44,61 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarExample">
-                    <ul class="navbar-nav me-auto mb-0">
+                    <ul class="navbar-nav me-auto gap-2">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" aria-current="page" href="/">Accueil</a>
+                            <a class="nav-link text-white px-1 active" aria-current="page" href="/">@lang('Home')</a>
                         </li>
+                        @auth
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">Étudiants</a>
+                            <a class="nav-link dropdown-toggle text-white px-1" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">@lang('Students')</a>
                             <ul class="dropdown-menu border-0">
-                                <li><a class="dropdown-item text-white" href="{{ route('etudiant.index') }}">Liste des étudiants</a></li>
-                                <li><a class="dropdown-item text-white" href="{{ route('etudiant.create') }}">Nouvel Étudiant</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('etudiant.index') }}">@lang('Students list')</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('etudiant.create') }}">@lang('New student')</a></li>
                             </ul>
                         </li>
+                        @endauth
                     </ul>
-                    <ul class="navbar-nav mb-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="{{ route('user.create') }}">S'inscrire</a>
+                    <ul class="navbar-nav gap-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white px-1" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="bi bi-person-circle"></i> @lang('Member space') </a>
+                            <ul class="dropdown-menu border-0">
+                                <li><a class="dropdown-item text-white" href="{{ route('user.index') }}">@lang('The members')</a></li>
+                                <li><a class="dropdown-item text-white" href="#">@lang('Forum')</a></li>
+                                <li><a class="dropdown-item text-white" href="#">@lang('Create a forum')</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="">Se connecter</a>
+                          <li class="nav-item">
+                            <a class="nav-link text-white px-1" aria-current="page" href="{{ route('user.create') }}">@lang("Sign up")</a>
                         </li>
-                    </ul> 
-                    <div class="flex-lg-row">
-                        <form class="container-sm d-flex justify-content-center p-2" role="search">
-                            <input class="form-control-sm" type="search" id="search" name="search" placeholder="Recherche..." aria-label="Search">
-                            <button class="btn btn-warning btn-sm btn-search" type="button" aria-label="Search">
-                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                            </button>
-                        </form>
-                    </div>      
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link text-white bg-primary rounded text-center px-2" aria-current="page" href="{{ route('login') }}">@lang('Login')</a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link text-white bg-primary rounded text-center
+                            px-2" aria-current="page" href="{{ route('logout') }}">@lang('Logout')</a>
+                        </li>
+                        @endguest
+                    </ul>   
                 </div>
             </div>
         </nav>
     </header>
     <main class="flex-grow-1">
+        @unless(Route::is('home', 'user.create'))
+            <section class="px-4 pt-4">
+                @auth
+                    <p class="fs-5 text-end"><strong><i>@lang("lang.text_login_welcome") {{  Auth::user()->name }} !</i></strong></p>
+                @else
+                    <p class="fs-5 text-center alert alert-warning col-md-6 mx-auto" role="alert"><strong>@lang("lang.text_login_msg")</strong></p>
+                @endauth
+            </section>
+        @endunless
         @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show mt-4 text-center fs-5" role="alert">
+            <div class="alert alert-success alert-dismissible fade show mt-4 text-center fs-5 col-8 mx-auto" role="alert">
                 {{ session('success')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -76,7 +107,7 @@
     </main>
     <footer class="text-light text-center p-2 mt-5">
         <p class="mb-0 fs-14">
-            &copy; Laravel-TP2.Tous droits réservés.
+            &copy; @lang("lang.text_footer")
         </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

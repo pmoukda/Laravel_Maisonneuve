@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Registration')
+@section('title',trans('lang.text_registration_title'))
 @section('content')
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <form action="{{ route('user.store')}}" method="post" class="bg-dark p-4 col-md-8 col-lg-6 border rounded-3 shadow-lg">
         @csrf
-            <h1 class="text-warning text-center mb-4">Inscription</h1>
+            <h1 class="text-warning text-center mb-4">@lang('lang.text_registration_title')</h1>
             @if (!$errors->isEmpty())
                 <div class="text-danger">
                     <ul class="navbar-nav">
@@ -17,29 +17,25 @@
                 </div>
             @endif
             <div class="form-group my-3">
-                <label class="text-light mb-2" for="name">Nom</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Votre nom">
+                <label class="text-light mb-2" for="name">@lang('lang.text_form_name')</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" placeholder="@lang('lang.text_placeholder_name')">
             </div>
             <div class="form-group my-3">
-                <label class=" text-light mb-2" for="email">Courriel </label>
-                <input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Votre courriel">
+                <label class=" text-light mb-2" for="email">@lang('lang.text_form_email')</label>
+                <input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="@lang('lang.text_placeholder_email')">
             </div>   
             <div class="form-group my-3">
-                <label class="text-light mb-2" for="password">Mot de passe</label>
-                <input class="form-control" type="password" id="pasword" name="password" placeholder="Entrez un mot de passe">
+                <label class="text-light mb-2" for="password">@lang('lang.text_form_pw')</label>
+                <input class="form-control" type="password" id="pasword" name="password" placeholder="@lang('lang.text_placeholder_pw')">
             </div>
             <div class="form-group my-3">
-                <label class="text-light mb-2" for="password_confirmation">Reconfirmation du mot de passe</label>
-                <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" placeholder="Entrer de nouveau le mot de passe">
+                <label class="text-light mb-2" for="password_confirmation">@lang('lang.text_form_confirm_pw')</label>
+                <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" placeholder="@lang('lang.text_placeholder_confirm_pw')">
             </div>
-            <div class="form-group my-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="invalidCheck">
-                    <label class="form-check-label fs-14 text-light" for="invalidCheck">Se souvenir de moi</label>
-                    <a class="fs-14 row justify-content-center text-warning mt-2" href="{{ route('login') }}">Déjà un compte? Se connecter</a>
-                </div>
+            <div class="form-group mt-5">
+                <a class="fs-14 row justify-content-center text-warning mt-2" href="{{ route('login') }}">@lang('lang.text_login_link')</a>
             </div>
-            <input class="btn btn-primary w-100 mt-4 fs-5" type="submit" value="S'incrire">
+            <input class="btn btn-primary w-100 mt-4 fs-5" type="submit" value="@lang('lang.text_registration_btn')">
         </form>
     </div>   
 </div>

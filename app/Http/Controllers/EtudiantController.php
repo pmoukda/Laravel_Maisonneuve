@@ -12,9 +12,13 @@ class EtudiantController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
     public function index()
     {
-       $etudiants = Etudiant::with('ville')->select()->orderby('nom')->paginate(16);
+       $etudiants = Etudiant::with('ville')->select()->orderby('nom')->paginate(15);
         return view('etudiant.index', ['etudiants' => $etudiants]);
     }
 
@@ -41,9 +45,16 @@ class EtudiantController extends Controller
             'ville_id' => 'required|exists:villes,id'
         ],
 [
-            'date_de_naissance.before' => 'Vous devez avoir au moins 16 ans.',
-            'date_de_naissance.after' => 'Vous devez avoir moins de 65 ans.',
-             
+            'date_de_naissance.before' => trans('lang.validation_birthDate_before'),
+            'date_de_naissance.after' => trans('lang.validation_birthDate_after'),   
+        ],  
+        [
+            'nom' => trans('lang.name'),
+            'adresse' => trans('lang.address'),
+            'telephone' => trans('lang.telephone'),
+            'email' => trans('lang.email'),
+            'date_de_naissance' => trans('lang.birthDate'),
+            'ville_id' => trans('lang.city'),
         ]);
         
         $etudiant = Etudiant::create([
@@ -55,7 +66,7 @@ class EtudiantController extends Controller
             'ville_id' => $request->ville_id
         ]);
 
-        return redirect()->route('etudiant.show', $etudiant->id)->with('success', "L'étudiant a été créer avec succès!");
+        return redirect()->route('etudiant.show', $etudiant->id)->with('success', trans('lang.success_create_msg'));
     }
 
     /**
@@ -88,8 +99,16 @@ class EtudiantController extends Controller
             'ville_id' => 'required|exists:villes,id'
         ],
 [
-            'date_de_naissance.before' => 'Vous devez avoir au moins 16 ans.',
-            'date_de_naissance.after' => 'Vous devez avoir moins de 65 ans.',
+            'date_de_naissance.before' => trans('lang.validation_birthDate_before'),
+            'date_de_naissance.after' => trans('lang.validation_birthDate_after'), 
+        ],
+        [
+            'nom' => trans('lang.name'),
+            'adresse' => trans('lang.address'),
+            'telephone' => trans('lang.telephone'),
+            'email' => trans('lang.email'),
+            'date_de_naissance' => trans('lang.birthDate'),
+            'ville_id' => trans('lang.city'),
         ]);
         
         $etudiant->update([
@@ -100,7 +119,7 @@ class EtudiantController extends Controller
             'ville_id' => $request->ville_id
         ]);
 
-        return redirect()->route('etudiant.show', $etudiant->id)->with("success"," Les informations ont été mises à jour!");
+        return redirect()->route('etudiant.show', $etudiant->id)->with('success', trans('lang.success_edit_msg'));
     }
 
     /**
@@ -110,6 +129,6 @@ class EtudiantController extends Controller
     {
         $etudiant->delete();
 
-        return redirect('etudiants')->with("success", "L'étudiant a été supprimer avec succès!");
+        return redirect('etudiants')->with('success', trans('lang.success_delete_msg'));
     }
 }
