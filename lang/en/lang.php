@@ -1,0 +1,109 @@
+<?php
+
+return [
+    // Home page
+    // Header
+    "text_header_placeholder" => "Search...",
+    "text_header_name" => "Mconnect",
+    "text_header_title" => "The Student Network",
+    "text_header_button" => "View participating students",
+    "text_sectionActuality_title" => "Recent News",
+
+    // News section
+    "text_card1_title" => "Student Project in Robotics",
+    "text_card1_paragraph" => "Students from the Electrical Engineering Technology program designed an autonomous robot for an intercollegiate competition.",
+    "text_card_btn" => "Read more",
+    "text_card2_title" => "New Internship Partnership",
+    "text_card2_paragraph" => "The Cégep has signed an agreement with Ubisoft to offer video game development internships to computer science students.",
+    "text_card3_title" => "Open House Day",
+    "text_card3_paragraph" => "Come and discover our college on Saturday, November 25 starting at 9 a.m. Teaching teams, activities, and more!",
+
+    // Gallery section
+    "text_sectionGallery_title" => "Gallery",
+
+    // Footer
+    "text_footer" => "Laravel-TP2. All rights reserved.",
+
+    // Login page
+    "text_login_msg" => "Please log in to continue.",
+    "text_login_welcome" => "Welcome,",
+    "text_login_title" => "Log In",
+    "text_form_login_email" => "Username or Email",
+    "text_placeholder_email" => "Your email",
+    "text_form_pw" => "Password",
+    "text_placeholder_pw" => "Enter your password",
+    "text_rememberMe" => "Remember me",
+    "text_link_registration" => "Not a member yet? Sign up",
+    "text_login_btn" => "Log In",
+
+    // Registration page
+    "text_form_name" => "Name",
+    "text_form_email" => "Email",
+    "text_form_confirm_pw" => "Confirm Password",
+    "text_placeholder_name" => "Your name",
+    "text_placeholder_form_pw" => "Enter a password",
+    "text_placeholder_confirm_pw" => "Re-enter password",
+    "text_login_link" => "Already have an account? Log in",
+    "text_registration_btn" => "Sign Up",
+    "text_registration_title" => "Registration",
+
+
+    // Students page
+    "text_studentIndex_title" => "Maisonneuve Students",
+    "text_studentIndex_city" => "City:",
+    "text_studentIndex_link" => "View profile",
+    "text_studentShow_title" => "Student",
+    "text_info_address" => "Address:",
+    "text_info_city" => "City:",
+    "text_info_email" => "Email:",
+    "text_info_phone" => "Phone number:",
+    "text_info_birthDate" => "date of birth:",
+    "text_info_registrationDate" => "Enrollment date:",
+    "text_studentAdd_title" => "Add a New Student",
+    "text_studentAdd_btn" => "Add",
+    "text_student_name" => "Full Name",
+    "text_student_phone" => "Phone Number",
+    "text_student_address" => "Address",
+    "text_student_city" => "City",
+    "text_student_birthDate" => "Date of Birth",
+    "text_student_select_city" => "Select a city",
+    "text_placeholder_phone" => "Your phone number",
+    "text_placeholder_address" => "Your address",
+    "text_placeholder_emailExample" => "name@abc.com",
+    "text_placeholder_birthDate" => "YYYY-MM-DD",
+    "text_selectCity_alert_msg" => "No cities found!",
+    "text_studentEdit_title" => "Update Student Information",
+    "text_studentEdit_btn" => "Save",
+    "text_studentDelete_msg" => "Are you sure you want to delete the student:",
+    "text_Delete_btn" => "Delete",
+    "text_Cancel_btn" => "Cancel",
+
+    // Users page
+    "text_userIndex_title" => "Users",
+    "text_userTable_head" => '<th class="col-md-5 px-4">Names</th>
+                              <th class="col-md-5">Emails</th>
+                              <th class="col-md-5">Forum</th>',
+    "text_userTable_body" => "View forum",
+    "text_user_alert_msg" => "No students found!",
+
+    // validation
+    "name" =>"name",
+    "address" =>"address",
+    "telephone" =>"phone number",
+    "email" =>"email",
+    "birthDate" =>"Date of birth",
+    "city" =>"city",
+    "password" => "password",
+    "validation_birthDate_before" => "You must be at least 16 years old.",
+    "validation_birthDate_after" => "You must be under 65 years old.",
+    "success_create_msg" => "The student has been created successfully!",
+    "success_delete_msg" => "The student has been deleted successfully!",
+    "success_edit_msg" => "The information has been updated!",
+    "success_connexion_msg" => "You are now connected!",
+
+
+
+
+];
+
+?>

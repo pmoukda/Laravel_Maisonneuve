@@ -3,7 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SetLocaleController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 // Routes des etudiants
 Route::get('/etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('/etudiants/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
@@ -39,3 +40,5 @@ Route::get('/login', [AuthController::class, 'create'])->name('login');
 Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 Route::get('/logout', [AuthController::class, 'destroy'])->name('logout');
 
+// Route pour les langues
+Route::get('/lang/{locale}', [SetLocaleController::class, 'index'])->name('lang');
