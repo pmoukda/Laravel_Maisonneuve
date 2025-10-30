@@ -45,4 +45,7 @@ class User extends Authenticatable
     public function etudiant(){
         return $this-> hasOne(Etudiant::class);
     }
+    public function forum(){
+        return $this-> hasMany(Forum::class);
+    }
 }
