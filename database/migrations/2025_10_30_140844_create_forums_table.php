@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('forums', function (Blueprint $table) {
+           
             $table->id();
-            $table->string('title');
-            $table->text('content');
+            $table->json('title');       
+            $table->json('content');  
             $table->timestamp('published_at')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->json('language');
+            $table->string('language');  
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
