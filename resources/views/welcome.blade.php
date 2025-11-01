@@ -6,8 +6,9 @@
   <div class=" container hero-text text-md-start">
     <h1 class="">@lang("lang.text_header_name")</h1>
     <h2 class="fst-italic">@lang("lang.text_header_title")</h2>
+    <p class="fst-italic">@lang("lang.text_header_paragraph")</p>
     <div class="d-flex justify-content-start mt-4">
-      <a href="{{ route('etudiant.index') }}" class="btn bg-warning btn-md ">@lang("lang.text_header_button")</a>
+      <a href="{{ route('forum.index') }}" class="btn bg-warning btn-md ">@lang("lang.text_header_button")</a>
     </div>
   </div>@lang("lang.")
 </section>

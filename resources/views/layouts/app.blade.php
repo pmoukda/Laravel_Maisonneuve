@@ -60,15 +60,17 @@
                         @endauth
                     </ul>
                     <ul class="navbar-nav gap-2">
+                        @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white px-1" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false"><i class="bi bi-person-circle"></i> @lang('Member space') </a>
                             <ul class="dropdown-menu border-0">
                                 <li><a class="dropdown-item text-white" href="{{ route('user.index') }}">@lang('The members')</a></li>
-                                <li><a class="dropdown-item text-white" href="#">@lang('Forum')</a></li>
-                                <li><a class="dropdown-item text-white" href="#">@lang('Create a forum')</a></li>
+                                <li><a class="dropdown-item text-white" href="{{ route('forum.index') }}">@lang('Forum')</a></li>
+                                <li><a class="dropdown-item text-white" href="{{route('forum.create')}}">@lang('Create a forum')</a></li>
                             </ul>
                         </li>
+                        @endauth
                           <li class="nav-item">
                             <a class="nav-link text-white px-1" aria-current="page" href="{{ route('user.create') }}">@lang("Sign up")</a>
                         </li>
