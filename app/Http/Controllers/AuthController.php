@@ -53,7 +53,7 @@ class AuthController extends Controller
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);
 
-        return redirect()->intended(route('etudiant.index'))->with('success', trans('lang.success_connexion_msg'));
+        return redirect()->intended(route('forum.index'))->with('success', trans('lang.success_connexion_msg'));
     }
 
     /**

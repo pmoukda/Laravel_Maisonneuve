@@ -15,7 +15,7 @@
             <tr>
                 <td class="px-4">{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td><a href="#">@lang('lang.text_userTable_body')</a></td>
+                <td><a href="{{ route('forum.show', $user->id) }}">@lang('lang.text_userTable_body')</a></td>
             </tr>
             @empty
             <div class="alert alert-warning mb-4 text-center fs-4">
