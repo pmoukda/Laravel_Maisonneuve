@@ -80,7 +80,8 @@ class ForumController extends Controller
      */
     public function show(Forum $forum)
     {
-        //
+        $lang = $forum->language;
+       return view('forum.show', compact('forum', 'lang'));
     }
 
     /**
