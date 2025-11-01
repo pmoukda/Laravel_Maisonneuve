@@ -19,7 +19,7 @@ class Etudiant extends Model
         'email',
         'date_de_naissance',
         'ville_id',
-        'user_id'
+        'user_id',
     ];
     public function ville()
     {

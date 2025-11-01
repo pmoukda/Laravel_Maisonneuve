@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
 use App\Models\Ville;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EtudiantController extends Controller
 {
@@ -20,7 +22,8 @@ class EtudiantController extends Controller
     {
        $etudiants = Etudiant::with('ville')->select()->orderby('nom')->paginate(15);
         return view('etudiant.index', ['etudiants' => $etudiants]);
-    }
+    
+}
 
     /**
      * Show the form for creating a new resource.
@@ -63,8 +66,16 @@ class EtudiantController extends Controller
             'telephone' => $request->telephone,
             'email' => $request->email,
             'date_de_naissance' => $request->date_de_naissance,
-            'ville_id' => $request->ville_id
+            'ville_id' => $request->ville_id,
         ]);
+
+        $user = new User;
+        $user->fill($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        $etudiant->user()->associate($user);
+        $etudiant->save();
 
         return redirect()->route('etudiant.show', $etudiant->id)->with('success', trans('lang.success_create_msg'));
     }

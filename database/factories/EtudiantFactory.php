@@ -23,7 +23,10 @@ class EtudiantFactory extends Factory
         'telephone' => $this->faker->phoneNumber(),
         'email' =>$this->faker->unique()->safeEmail(),
         'date_de_naissance' => $this->faker->dateTimeBetween('-65 years','-16 years')->format('Y-m-d'),
-        'ville_id'=> Ville::inRandomOrder()->first()->id
+        'ville_id'=> Ville::inRandomOrder()->first()->id,
         ];
     }
 }
+
+
+

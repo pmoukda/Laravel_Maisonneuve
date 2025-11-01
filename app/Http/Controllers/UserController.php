@@ -47,12 +47,13 @@ class UserController extends Controller
             'email' => trans('lang.email'),
             'password' => trans('lang.password')
         ]);
+        
         $user = new User;
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect(route('user.index'))->with("success", trans("success_create_msg"));
+        return redirect(route('user.index'))->with("success", trans("lang.success_create_msg"));
 
     }
 
