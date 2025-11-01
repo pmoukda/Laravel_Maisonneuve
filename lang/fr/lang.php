@@ -6,24 +6,33 @@ return [
     "text_header_placeholder" => "Recherche...",
     "text_header_name" => "Mconnect",
     "text_header_title" => "Le réseau des étudiants",
-    "text_header_button" => "Voir les étudiants participants",
+    "text_header_paragraph" => "Participez à nos discussions sur le forum.",
     "text_sectionActuality_title" => "Actualités récentes",
-
+    
     //section actualité
     "text_card1_title" => "Projet étudiant en robotique",
     "text_card1_paragraph" => "Des étudiants du programme Technologie du génie électrique ont conçu un robot autonome pour une compétition  intercollégiale",
-    "text_card_btn" => "Lire plus",
     "text_card2_title" => "Nouveau partenariat de stages",
     "text_card2_paragraph" => "Le Cégep signe une entente avec Ubisoft pour offrir des stages en développement de jeux vidéo aux étudiants en informatique",                          
     "text_card3_title" => "Journée portes ouvertes",
     "text_card3_paragraph" => "Venez découvrir notre collège le samedi 25 novembre à partir de 9h. Équipes pédagogiques, animations, et plus !",
-                 
+    
     // section gallerie
     "text_sectionGallery_title" => "Galerie",
-
+    
+    // Boutons
+    "text_header_button" => "Je participe!",
+    "text_card_btn" => "Lire plus",
+    "text_login_btn" => "Se connecter",
+    "text_registration_btn" => "S'inscrire",
+    "text_studentAdd_btn" => "Ajouter",
+    "text_Delete_btn" => "Supprimer",
+    "text_Cancel_btn" => "Annuler",
+    "text_studentEdit_btn" => "Enregistrer",
+    
     // Footer
     "text_footer" => "Laravel-TP2. Tous droits réservés.",
-
+    
     // page login
     "text_login_msg" => "Veuillez vous connecter pour continuer.",
     "text_login_welcome" => "Bienvenue,",
@@ -32,7 +41,6 @@ return [
     "text_form_pw" => "Mot de passe",
     "text_rememberMe" => "Se souvenir de moi",
     "text_link_registration" => "Pas encore membre? S'inscrire",
-    "text_login_btn" => "Se connecter",
     
     // page inscription
     "text_form_name" => "Nom",
@@ -43,7 +51,6 @@ return [
     "text_placeholder_form_pw" => "Entrer un mot de passe",
     "text_placeholder_confirm_pw" => "Entrer de nouveau le mot de passe",
     "text_login_link" => "Déjà un compte? Se connecter",
-    "text_registration_btn" => "S'inscrire",
     "text_registration_title" => "Inscription",
 
     // page des étudiants
@@ -58,7 +65,6 @@ return [
     "text_info_birthDate" => "date de naissance:",
     "text_info_registrationDate" => "Date d'inscription:",
     "text_studentAdd_title" => "Ajouter un nouvel étudiant",
-    "text_studentAdd_btn" => "Ajouter",
     "text_student_name" => "Nom complet",
     "text_student_phone" => "Numéro de téléphone",
     "text_student_address" => "Adresse",
@@ -71,10 +77,8 @@ return [
     "text_placeholder_birthDate" => "AAAA-MM-JJ",
     "text_selectcity_alert_msg" => "Aucune ville n’a été trouvée!",
     "text_studentEdit_title" => "Mettre à jour les infos de l'étudiant",
-    "text_studentEdit_btn" => "Enregistrer",
     "text_studentDelete_msg" => "Voulez-vous vraiment supprimer l'étudiant:",
-    "text_Delete_btn" => "Supprimer",
-    "text_Cancel_btn" => "Annuler",
+   
     
     // page users
     "text_userIndex_title" => "Les utilisateurs",
@@ -84,7 +88,7 @@ return [
     "text_userTable_body" => "Voir forum",
     "text_user_alert_msg" => "Aucun étudiant trouvé!",
 
-    // validation
+    // Validation
     "name" =>"nom",
     "address" =>"adresse",
     "telephone" =>"téléphone",
@@ -97,7 +101,33 @@ return [
     "success_create_msg" => "L'étudiant a été créer avec succès!",
     "success_delete_msg" => "L'étudiant a été supprimer avec succès!",
     "success_edit_msg" => "Les informations ont été mises à jour!",
-    "success_connexion_msg" => "You are now connected!",
+    "success_connexion_msg" => "Vous êtes maintenant connecté!",
+    "success_create_forum_msg" => "Le forum a été créer avec succès!",
+
+    // Forum page
+    //create
+    "text_forum_title" => "Créez votre forum",
+    "option_lang_en" => "Option anglais",
+    "option_lang_fr" => "Option Français",
+    "text_form_title" => "Titre",
+    "text_form_content" => "Article",
+    "text_published_btn" => "Publier",
+    "lang_en" => "Anglais",
+    "lang_fr" => "Français",
+    'title_en' => 'titre anglais',
+    'title_fr' => 'titre français',
+    'content_en' => 'contenu anglais',
+    'content_fr' => 'contenu français',
+    'published_at' => "Date de publication",
+    'user_id' => "utilisateur",
+    'language' => "option langue",
+    // show
+    'forum_details' => 'Détails du forum',
+    'title' => 'Titre',
+    'author' => 'Auteur',
+    'available_languages' => 'Langues disponibles',
+    'back_to_list' => 'Retour à la liste',
+    
 ]
 
 

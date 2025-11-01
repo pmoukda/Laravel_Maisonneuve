@@ -6,20 +6,29 @@ return [
     "text_header_placeholder" => "Search...",
     "text_header_name" => "Mconnect",
     "text_header_title" => "The Student Network",
-    "text_header_button" => "View participating students",
+    "text_header_paragraph" => "Join our discussions on the forum.",
     "text_sectionActuality_title" => "Recent News",
-
+    
     // News section
     "text_card1_title" => "Student Project in Robotics",
     "text_card1_paragraph" => "Students from the Electrical Engineering Technology program designed an autonomous robot for an intercollegiate competition.",
-    "text_card_btn" => "Read more",
     "text_card2_title" => "New Internship Partnership",
     "text_card2_paragraph" => "The Cégep has signed an agreement with Ubisoft to offer video game development internships to computer science students.",
     "text_card3_title" => "Open House Day",
     "text_card3_paragraph" => "Come and discover our college on Saturday, November 25 starting at 9 a.m. Teaching teams, activities, and more!",
-
+    
     // Gallery section
     "text_sectionGallery_title" => "Gallery",
+    
+    // Buttons
+    "text_header_button" => "I participate!",
+    "text_card_btn" => "Read more",
+    "text_login_btn" => "Log In",
+    "text_registration_btn" => "Sign Up",
+    "text_studentAdd_btn" => "Add",
+    "text_studentEdit_btn" => "Save",
+    "text_Delete_btn" => "Delete",
+    "text_Cancel_btn" => "Cancel",
 
     // Footer
     "text_footer" => "Laravel-TP2. All rights reserved.",
@@ -34,7 +43,6 @@ return [
     "text_placeholder_pw" => "Enter your password",
     "text_rememberMe" => "Remember me",
     "text_link_registration" => "Not a member yet? Sign up",
-    "text_login_btn" => "Log In",
 
     // Registration page
     "text_form_name" => "Name",
@@ -44,7 +52,6 @@ return [
     "text_placeholder_form_pw" => "Enter a password",
     "text_placeholder_confirm_pw" => "Re-enter password",
     "text_login_link" => "Already have an account? Log in",
-    "text_registration_btn" => "Sign Up",
     "text_registration_title" => "Registration",
 
 
@@ -60,7 +67,6 @@ return [
     "text_info_birthDate" => "date of birth:",
     "text_info_registrationDate" => "Enrollment date:",
     "text_studentAdd_title" => "Add a New Student",
-    "text_studentAdd_btn" => "Add",
     "text_student_name" => "Full Name",
     "text_student_phone" => "Phone Number",
     "text_student_address" => "Address",
@@ -73,10 +79,7 @@ return [
     "text_placeholder_birthDate" => "YYYY-MM-DD",
     "text_selectCity_alert_msg" => "No cities found!",
     "text_studentEdit_title" => "Update Student Information",
-    "text_studentEdit_btn" => "Save",
     "text_studentDelete_msg" => "Are you sure you want to delete the student:",
-    "text_Delete_btn" => "Delete",
-    "text_Cancel_btn" => "Cancel",
 
     // Users page
     "text_userIndex_title" => "Users",
@@ -86,7 +89,7 @@ return [
     "text_userTable_body" => "View forum",
     "text_user_alert_msg" => "No students found!",
 
-    // validation
+    // Validation
     "name" =>"name",
     "address" =>"address",
     "telephone" =>"phone number",
@@ -100,10 +103,31 @@ return [
     "success_delete_msg" => "The student has been deleted successfully!",
     "success_edit_msg" => "The information has been updated!",
     "success_connexion_msg" => "You are now connected!",
+    "success_create_forum_msg" => "The forum has been created successfully!",
 
-
-
-
+    // Forum page
+    // create
+    "text_forum_title" => "Create your forum",
+    "option_lang" => "English option",
+    "option_lang_fr" => "French option",
+    "text_form_title" => "Title",
+    "text_form_content" => "Article",
+    "text_published_btn" => "Publish",
+    "lang_en" => "English",
+    "lang_fr" => "French",
+    'title_en' => 'title english',
+    'title_fr' => 'title french',
+    'content_en' => 'content english',
+    'content_fr' => 'content french',
+    'published_at' => "Published At",
+    'user_id' => "user",
+    'language' => "language option",
+    // show
+    'forum_details' => 'Forum Details',
+    'title' => 'Title',
+    'author' => 'Author',
+    'available_languages' => 'Available Languages',
+    'back_to_list' => 'Back to List'
 ];
 
 ?>
