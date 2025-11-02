@@ -18,12 +18,20 @@
         <p><strong>@lang('lang.author'):</strong> {{ $forum->user->name }}</p>
     </div>
     <div class="d-flex justify-content-between mt-4">
+        @auth
         <div>
-            <a href="{{ route('forum.edit',$forum->id) }}" class="btn btn-warning fs-5 me-3"><i class="bi bi-pencil-square"></i></a>
-            <button type="button" class="btn btn-danger fs-5" >
-                <i class="bi bi-trash3"></i>
-            </button>
+           @if (auth()->id() === $forum->user_id )
+                <a href="{{ route('forum.edit',$forum->id) }}" class="btn btn-warning fs-5 me-3"><i class="bi bi-pencil-square"></i></a>
+                <form action="{{ route('forum.destroy', $forum) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger fs-5" >
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                </form>
+            @endif 
         </div>
+        @endauth
         <a href="{{ route('forum.index') }}" class="btn btn-outline-primary">@lang('lang.back_to_list')</a>
     </div>
 </div>

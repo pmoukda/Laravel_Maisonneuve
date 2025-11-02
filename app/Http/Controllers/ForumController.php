@@ -91,7 +91,7 @@ class ForumController extends Controller
      */
     public function edit(Forum $forum)
     {
-       //
+        return view('forum.edit', compact('forum'));
     }
 
     /**
@@ -99,7 +99,47 @@ class ForumController extends Controller
      */
     public function update(Request $request, Forum $forum)
     {
-       //
+        $request-> validate([
+            'title_en' => 'max:100',
+            'title_fr' => 'required|max:100',
+            'content_en' => 'max:1100',
+            'content_fr' => 'required|max:1100',
+            'published_at' => 'date|nullable',
+            'language' => 'required|in:fr,en',
+            
+        ],
+        [],
+        [
+            'title_en' => trans('lang.title_en'),
+            'title_fr' => trans('lang.title_fr'),
+            'content_en' => trans('lang.content_en'),
+            'content_fr' => trans('lang.content_fr'),
+            'published_at' => trans('lang.publish_at'),
+            'language' => trans('lang.language'),
+            
+        ]);
+        
+        // Filtrer les langues remplies
+        $titles = array_filter([
+            'fr' => $request->input('title_fr'),
+            'en' => $request->input('title_en'),
+        ]);
+
+        $contents = array_filter([
+            'fr' => $request->input('content_fr'),
+            'en' => $request->input('content_en'),
+        ]);
+
+        $forum->update([
+            'language' => $request->input('language'),
+            'title' => $titles,
+            'content' => $contents,
+            'published_at' => $request->input('published_at'),
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('forum.show', $forum->id)->with('success', trans('lang.success_edit_msg'));
+    
     }
 
     /**
