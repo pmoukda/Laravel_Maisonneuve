@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Symfony\Contracts\Service\Attribute\Required;
 use Illuminate\Support\Facades\Auth;
 
+
 class ForumController extends Controller
 {
     /**
@@ -15,8 +16,11 @@ class ForumController extends Controller
      */
     public function index()
     {
-        //
+        $forums = Forum::with('user')->paginate(5);
+        
+        return view('forum.index', compact('forums'));
     }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -73,8 +77,6 @@ class ForumController extends Controller
         return redirect()->route('forum.show', $forum->id)->with('success', trans('lang.success_create_forum_msg'));
     }
 
-
-
     /**
      * Display the specified resource.
      */
@@ -89,7 +91,7 @@ class ForumController extends Controller
      */
     public function edit(Forum $forum)
     {
-        //
+       //
     }
 
     /**
@@ -97,7 +99,7 @@ class ForumController extends Controller
      */
     public function update(Request $request, Forum $forum)
     {
-        //
+       //
     }
 
     /**

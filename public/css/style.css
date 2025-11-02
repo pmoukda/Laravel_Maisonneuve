@@ -76,4 +76,16 @@ form .form-control-sm{
     font-size: 14px;
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.text-dark-blue{
+    color:#03102b;
+}
+
+form{
+    display: inline;
+}
+
 

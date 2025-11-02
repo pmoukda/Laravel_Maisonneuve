@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class Forum extends Model
 {
@@ -38,5 +40,17 @@ class Forum extends Model
             set: fn($value) => json_encode($value)
         );
     }
+
+    public function getPublishedDateAttribute()
+    {
+        return $this->published_at ? Carbon::parse($this->published_at)->format('Y-m-d'): null;
+    }
+
+    public function getShortContentAttribute()
+    {
+        $lang = $this->language;
+        return Str::limit($this->content[$lang], 150);
+    }
+
 }
 
