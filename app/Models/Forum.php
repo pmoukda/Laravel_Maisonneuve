@@ -51,6 +51,12 @@ class Forum extends Model
         $lang = $this->language;
         return Str::limit($this->content[$lang], 150);
     }
+    public function getTitleLanguageAttribute()
+    {
+        $lang = $this->language;
+        return $this->title[$lang];
+    }
+    
 
 }
 

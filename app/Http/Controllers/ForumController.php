@@ -17,7 +17,6 @@ class ForumController extends Controller
     public function index()
     {
         $forums = Forum::with('user')->paginate(5);
-        
         return view('forum.index', compact('forums'));
     }
    
@@ -147,6 +146,12 @@ class ForumController extends Controller
      */
     public function destroy(Forum $forum)
     {
-        //
+        if(auth::user()){
+
+            $forum->delete();
+        }
+        
+        return redirect()->route('forum.index')->with('success', trans('lang.success_deleted_forum_msg'));
+    
     }
 }
