@@ -17,12 +17,12 @@
                 </div>
             @endif
             <fieldset>
-                <legend class="text-white fs-6">Langue de publication</legend>
+                <legend class="text-white fs-6">@lang('lang.text_legend_lang')</legend>
                 <select class="form-select mb-3" name="language" id="language" required>
                     <option value="fr" {{ old('language') == 'fr' ? 'selected' : '' }}>@lang('lang.lang_fr')</option>
                     <option value="en" {{ old('language') == 'en' ? 'selected' : '' }}>@lang('lang.lang_en')</option>
                 </select>
-                <legend class="text-light">Contenu en anglais</legend>
+                <legend class="text-light">@lang('lang.text_legend_en')</legend>
                 <div class="form-group my-3">
                     <label class="text-light mb-2" for="title_en">@lang('lang.text_form_title')</label>
                     <input class="form-control" type="text" id="title_en" name="title_en" value="{{ old('title_en') }}">
@@ -31,7 +31,7 @@
                     <label class="text-light mb-2" for="content_en">@lang('lang.text_form_content')</label>
                     <textarea class="form-control" rows="10" id="content_en" name="content_en">{{ old('content_en') }}</textarea>
                 </div>
-                <legend class="text-light">Contenu en français</legend>
+                <legend class="text-light">@lang('lang.text_legend_fr')</legend>
                 <div class="form-group my-3">
                     <label class="text-light mb-2" for="title_fr">@lang('lang.text_form_title')</label>
                     <input class="form-control" type="text" id="title_fr" name="title_fr" value="{{ old('title_fr') }}">

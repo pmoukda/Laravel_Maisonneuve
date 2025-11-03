@@ -26,9 +26,11 @@ return [
     "text_login_btn" => "Log In",
     "text_registration_btn" => "Sign Up",
     "text_studentAdd_btn" => "Add",
-    "text_studentEdit_btn" => "Save",
+    "text_Save_btn" => "Save",
     "text_Delete_btn" => "Delete",
+    "text_Edit_btn" => "Edit",
     "text_Cancel_btn" => "Cancel",
+    "text_seeMore_btn" => "See more",
 
     // Footer
     "text_footer" => "Laravel-TP2. All rights reserved.",
@@ -104,7 +106,9 @@ return [
     "success_edit_msg" => "The information has been updated!",
     "success_connexion_msg" => "You are now connected!",
     "success_create_forum_msg" => "The forum has been created successfully!",
-
+    "success_deleted_forum_msg" => "The forum has been deleted successfully!",
+    "error_forum_msg" => "No forums available at the moment.",
+    
     // Forum page
     // create
     "text_forum_title" => "Create your forum",
@@ -115,19 +119,28 @@ return [
     "text_published_btn" => "Publish",
     "lang_en" => "English",
     "lang_fr" => "French",
-    'title_en' => 'title english',
-    'title_fr' => 'title french',
-    'content_en' => 'content english',
-    'content_fr' => 'content french',
-    'published_at' => "Published At",
-    'user_id' => "user",
-    'language' => "language option",
+    "title_en" => "title english",
+    "title_fr" => "title french",
+    "content_en" => "content english",
+    "content_fr" => "content french",
+    "published_at" => "Published At",
+    "user_id" => "user",
+    "language" => "language option",
+    "text_legend_lang" => "Language of publication",
+    "text_legend_en" => "Content in english",
+    "text_legend_fr" => "Content in French",
     // show
-    'forum_details' => 'Forum Details',
-    'title' => 'Title',
-    'author' => 'Author',
-    'available_languages' => 'Available Languages',
-    'back_to_list' => 'Back to List'
+    "forum_details" => "Forum Details",
+    "title" => "Title",
+    "author" => "Author",
+    "available_languages" => "Available Languages",
+    "back_to_list" => "Back to List",
+    // index
+    "text_forum_welcome" => "Welcome to our forum",
+    "text_forum_paragraph" => "A space where you can express yourself and interact with our community!",
+    // delete
+    "text_DeleteForum_msg" => "Are you sure you want to delete this forum?"
+
 ];
 
 ?>

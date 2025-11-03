@@ -27,8 +27,10 @@ return [
     "text_registration_btn" => "S'inscrire",
     "text_studentAdd_btn" => "Ajouter",
     "text_Delete_btn" => "Supprimer",
+    "text_Edit_btn" => "Modifier",
     "text_Cancel_btn" => "Annuler",
-    "text_studentEdit_btn" => "Enregistrer",
+    "text_Save_btn" => "Enregistrer",
+    "text_seeMore_btn" => "Voir plus",
     
     // Footer
     "text_footer" => "Laravel-TP2. Tous droits réservés.",
@@ -103,6 +105,8 @@ return [
     "success_edit_msg" => "Les informations ont été mises à jour!",
     "success_connexion_msg" => "Vous êtes maintenant connecté!",
     "success_create_forum_msg" => "Le forum a été créer avec succès!",
+    "success_deleted_forum_msg" => "Le forum a été supprimé avec succès!",
+    "error_forum_msg" => "Aucun forum disponible pour le moment.",
 
     // Forum page
     //create
@@ -114,20 +118,27 @@ return [
     "text_published_btn" => "Publier",
     "lang_en" => "Anglais",
     "lang_fr" => "Français",
-    'title_en' => 'titre anglais',
-    'title_fr' => 'titre français',
-    'content_en' => 'contenu anglais',
-    'content_fr' => 'contenu français',
-    'published_at' => "Date de publication",
-    'user_id' => "utilisateur",
-    'language' => "option langue",
+    "title_en" => "titre anglais",
+    "title_fr" => "titre français",
+    "content_en" => "contenu anglais",
+    "content_fr" => "contenu français",
+    "published_at" => "Date de publication",
+    "user_id" => "utilisateur",
+    "language" => "option langue",
+    "text_legend_lang" => "Langue de publication",
+    "text_legend_en" => "Contenu en anglais",
+    "text_legend_fr" => "Contenu en français",
     // show
-    'forum_details' => 'Détails du forum',
-    'title' => 'Titre',
-    'author' => 'Auteur',
-    'available_languages' => 'Langues disponibles',
-    'back_to_list' => 'Retour à la liste',
-    
+    "forum_details" => "Détails du forum",
+    "title" => "Titre",
+    "author" => "Auteur",
+    "available_languages" => "Langues disponibles",
+    "back_to_list" => "Retour à la liste",
+    // index
+    "text_forum_welcome" => "Bienvenue sur notre forum",
+    "text_forum_paragraph" => "Un espace où vous pouvez vous exprimer et interagir avec notre communauté !",
+    // delete
+    "text_DeleteForum_msg" => "Voulez-vous vraiement supprimer ce forum?"
 ]
 
 
