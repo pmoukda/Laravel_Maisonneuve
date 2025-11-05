@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SetLocaleController;
 use App\Http\Controllers\ForumController;
@@ -53,5 +54,15 @@ Route::middleware('auth')->group(function(){
     Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.destroy');
 });
 
+// Routes de folder
+Route::middleware('auth')->group(function(){
+    Route::get('/folder', [FolderController::class, 'index'])->name('folder.index');
+    Route::get('/create/folder', [FolderController::class, 'create'])->name('folder.create');
+    Route::post('/create/folder', [FolderController::class, 'store'])->name('folder.store');
+    Route::get('/show/folder/{folder}', [FolderController::class, 'show'])->name('folder.show');
+    Route::get('/edit/folder/{folder}', [FolderController::class, 'edit'])->name('folder.edit');
+    Route::put('/edit/folder/{folder}', [FolderController::class, 'update'])->name('folder.update');
+    Route::delete('/folder/{folder}', [FolderController::class, 'destroy'])->name('folder.destroy');
+});
 // Route pour les langues
 Route::get('/lang/{locale}', [SetLocaleController::class, 'index'])->name('lang');
