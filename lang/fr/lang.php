@@ -138,7 +138,16 @@ return [
     "text_forum_welcome" => "Bienvenue sur notre forum",
     "text_forum_paragraph" => "Un espace où vous pouvez vous exprimer et interagir avec notre communauté !",
     // delete
-    "text_DeleteForum_msg" => "Voulez-vous vraiement supprimer ce forum?"
+    "text_DeleteForum_msg" => "Voulez-vous vraiement supprimer ce forum?",
+
+    // page folder
+    "text_folderIndex_title" => "Répertoire de fichiers",
+    "text_folder_alert_msg" => "Aucun fichier trouvé!",
+    "text_folderTable_title" => "Titre",
+    "text_folderTable_user_name" => "Nom de l'utilisateur",
+    "text_folderTable_link" => "Document",
+    "text_folderTable_body" => "Voir lien",
+
 ]
 
 
