@@ -68,6 +68,8 @@
                                 <li><a class="dropdown-item text-white" href="{{ route('user.index') }}">@lang('The members')</a></li>
                                 <li><a class="dropdown-item text-white" href="{{ route('forum.index') }}">@lang('Forum')</a></li>
                                 <li><a class="dropdown-item text-white" href="{{route('forum.create')}}">@lang('Create a forum')</a></li>
+                                <li><a class="dropdown-item text-white" href="{{route('folder.create')}}">@lang('Add file')</a></li>
+                                <li><a class="dropdown-item text-white" href="{{route('folder.index')}}">@lang('Files directory')</a></li>
                             </ul>
                         </li>
                         @endauth
