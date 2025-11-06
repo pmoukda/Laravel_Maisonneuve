@@ -79,7 +79,7 @@
                     @endif
                 </div>
             </div>
-            <button type="submit" class="btn bg-primary text-light bg-gradient mt-5 fs-5 fw-bold mx-auto d-block w-100 ">@lang('lang.text_studentAdd_btn')</button>
+            <button type="submit" class="btn bg-primary text-light bg-gradient mt-5 fs-5 fw-bold mx-auto d-block w-100 ">@lang('lang.text_Add_btn')</button>
         </form> 
     </div>
 </div>
