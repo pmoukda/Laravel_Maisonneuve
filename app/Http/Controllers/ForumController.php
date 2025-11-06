@@ -16,7 +16,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forums = Forum::with('user')->paginate(5);
+        $forums = Forum::query()->orderByRaw('user_id= ? desc', [auth()->id()])->latest('published_at')->paginate(5);
         return view('forum.index', compact('forums'));
     }
    
@@ -39,7 +39,7 @@ class ForumController extends Controller
             'title_fr' => 'required|max:100',
             'content_en' => 'max:1100',
             'content_fr' => 'required|max:1100',
-            'published_at' => 'date|nullable',
+            'published_at' => 'required|date',
             'language' => 'required|in:fr,en',
             
         ],
@@ -49,7 +49,7 @@ class ForumController extends Controller
             'title_fr' => trans('lang.title_fr'),
             'content_en' => trans('lang.content_en'),
             'content_fr' => trans('lang.content_fr'),
-            'published_at' => trans('lang.publish_at'),
+            'published_at' => trans('lang.published_at'),
             'language' => trans('lang.language'),
             
         ]);
@@ -103,7 +103,7 @@ class ForumController extends Controller
             'title_fr' => 'required|max:100',
             'content_en' => 'max:1100',
             'content_fr' => 'required|max:1100',
-            'published_at' => 'date|nullable',
+            'published_at' => 'required|date|before:-1 month|after: now',
             'language' => 'required|in:fr,en',
             
         ],
@@ -113,7 +113,7 @@ class ForumController extends Controller
             'title_fr' => trans('lang.title_fr'),
             'content_en' => trans('lang.content_en'),
             'content_fr' => trans('lang.content_fr'),
-            'published_at' => trans('lang.publish_at'),
+            'published_at' => trans('lang.published_at'),
             'language' => trans('lang.language'),
             
         ]);
