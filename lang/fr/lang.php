@@ -152,6 +152,7 @@ return [
     //create
     "text_form_doc" => "Document",
     "text_folder_title" => "Ajouter un fichier",
+    "text_Editfolder_title" => "Modifier le fichier",
 
 ]
 

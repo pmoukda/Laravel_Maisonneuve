@@ -153,6 +153,7 @@ return [
     //create
     "text_form_doc" => "Document",
     "text_folder_title" => "Add file",
+    "text_Editfolder_title" => "Edit file",
     
 ];
 
