@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Folder;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class FolderController extends Controller
 {
@@ -13,7 +15,7 @@ class FolderController extends Controller
     public function index()
     {
         $folders = Folder::with('user')->paginate(10);
-         return view('folder.index', compact('folders'));
+        return view('folder.index', compact('folders'));
     }
 
     /**
@@ -34,7 +36,39 @@ class FolderController extends Controller
             'title_fr' => 'required|max:100',
             'published_at' => 'required|date',
             'language' => 'required|in:fr,en',
-        ]); 
+            'path' => 'required|file|mimes:pdf,doc,docx,zip|max:5000'
+         ],
+        [],
+        [
+            'title_en' => trans('lang.title_en'),
+            'title_fr' => trans('lang.title_fr'),
+            'published_at' => trans('lang.published_at'),
+            'language' => trans('lang.language'),
+            'path' => trans('lang.text_form_doc'),
+        ]);
+
+        // Filtrer les langues remplies
+        $titles = array_filter([
+            'fr' => $request->input('title_fr'),
+            'en' => $request->input('title_en'),
+        ]);
+        
+        if($request->hasFile('path')){
+            $file = $request->file('path'); // récupérer le fichier 
+            $filePath = $file->store('uploads', 'public'); // stocker le fichier
+        }else{
+            $filePath = null;
+        }
+
+        $folder = Folder::create([
+            'language' => $request->input('language'),
+            'title' => $titles,
+            'published_at' => $request->input('published_at'),
+            'path' =>$filePath,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('folder.index', $folder->id)->with('success', trans('lang.success_create_folder_msg'));
 
     }
   

@@ -25,7 +25,7 @@ return [
     "text_card_btn" => "Read more",
     "text_login_btn" => "Log In",
     "text_registration_btn" => "Sign Up",
-    "text_studentAdd_btn" => "Add",
+    "text_Add_btn" => "Add",
     "text_Save_btn" => "Save",
     "text_Delete_btn" => "Delete",
     "text_Edit_btn" => "Edit",
@@ -108,6 +108,7 @@ return [
     "success_create_forum_msg" => "The forum has been created successfully!",
     "success_deleted_forum_msg" => "The forum has been deleted successfully!",
     "error_forum_msg" => "No forums available at the moment.",
+    "success_create_folder_msg" => "The document has been added successfully!.",
     
     // Forum page
     // create
@@ -141,13 +142,18 @@ return [
     // delete
     "text_DeleteForum_msg" => "Are you sure you want to delete this forum?",
 
-     // page folder
+    // page folder
+    //  index
     "text_folderIndex_title" => "Files directory",
     "text_folder_alert_msg" => "No file found!",
     "text_folderTable_title" => "Title",
     "text_folderTable_user_name" => "User name",
     "text_folderTable_link" => "Document",                       
-    "text_folderTable_body" => "See link",
+    "text_folderTable_body" => "Upload file",
+    //create
+    "text_form_doc" => "Document",
+    "text_folder_title" => "Add file",
+    
 ];
 
 ?>
